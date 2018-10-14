@@ -1,0 +1,301 @@
+/home/guibax/Programs/PycharmProjects/Tele/venv/bin/python /home/guibax/Programs/PycharmProjects/Tele/moodlescraper.py
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ensino Aberto - um ambiente de apoio ao ensino-aprendizagem</title>
+
+    <!-- getBootstrap.com core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+<script language="JavaScript">
+
+function stopRKey(evt) {
+  var evt = (evt) ? evt : ((event) ? event : null);
+  var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+  if ((evt.keyCode == 13) && ((node.type=="text") || (node.type=="password")))  {return false;}
+}
+document.onkeypress = stopRKey; 
+
+
+  function acessa(url){
+        document.formAcesso.acesso.value=url;
+        document.formAcesso.submit();
+  }
+
+  function OpenURL(TheURL) {
+        var largura = screen.availWidth;
+        var altura = screen.availHeight;
+        window.open(TheURL,"URL","top=0, left=0, width="+ (largura-7) + ", height="+ (altura-7) + ", scrollbars=yes,toolbar=no,location=no,menubar=no,resizable=yes");
+  }
+
+  function OpenFAQ(TheURL) {
+        var largura = screen.availWidth;
+        var altura = screen.availHeight;
+        window.open(TheURL,"FAQ","top=0, left=0, width=780, height=700, scrollbars=yes,toolbar=no,location=no,menubar=no,resizable=yes");
+  }
+
+  function OpenFormContato(TheURL) {
+        var largura = screen.availWidth;
+        var altura = screen.availHeight;
+        window.open(TheURL,"Contato","top=0, left=0, width=780, height=800, scrollbars=yes,toolbar=no,location=no,menubar=no,resizable=yes");
+  }
+
+  function OpenForum(TheURL) {
+        var largura = screen.availWidth;
+        var altura = screen.availHeight;
+        window.open(TheURL,"Forum","top=0, left=0, width=700, height=550, scrollbars=yes,toolbar=no,location=no,menubar=no,resizable=yes");
+  }
+
+  function OpenPopupAviso(TheURL) {
+        window.open(TheURL,"Aviso","top=0, left=0, width=400, height=350, scrollbars=yes,toolbar=no,location=no,menubar=no,resizable=yes");
+  }
+
+  function Aviso(usr) {
+	switch (usr){
+		case 'd':
+			alert('Prezado(a) Docente,\n\nEstamos temporariamente fora do ar para manutenção. Retornaremos em breve.\n\nObrigado.');
+			break;
+		case 'e':
+			alert('Prezado(a) Estudante,\n\nEstamos temporariamente fora do ar para manutenção. Retornaremos em breve.\n\nObrigado.');
+			break;
+		default :
+		    alert('Estamos temporariamente fora do ar para manutenção. Retornaremos em breve.\n\nObrigado.');
+	}
+  }
+</script>
+
+<script type="text/javascript">
+function loginerror() {
+  var query = window.location.search.substring(1);
+  var vars = query.split("=");
+    if (vars[0] == 'errorcode') {
+      var erro = vars[1];
+    }
+  if (erro == '3') {
+    alert('Username ou senha inválidos!');
+  }
+}
+</script>
+
+    <script type="text/javascript" src="../js/jsval.js"></script>
+    <script type="text/javascript" src='https://www.google.com/recaptcha/api.js'></script>
+
+</head>
+
+
+
+
+<!-- CÓDIGO POPUP DE AVISOS DENTRO DA BODY onLoad="OpenPopupAviso('popup_aviso.php');loginerror()" -->
+<body  bgcolor="#FFFFFF" onLoad="loginerror()" topmargin="0" leftmargin="0" marginwidth="0" marginheight="10" onload="loginerror()">
+
+<table border="0" width=80% align="center">
+
+	<tr bgcolor="">
+		<td ><img src="img/eaunicamp.png"></td>
+
+		<td align="right"><a href="http://www.unicamp.br" target="_blank" title="Acesso ao site Unicamp"><img src="img/unicamp.png"></a></td>
+	</tr>
+</table>
+
+
+<table border="0" width=100% align="center">
+
+	<tr bgcolor="SteelBlue" border="0">
+		<td bgcolor="LightGray" width=8% rowspan=9 style="background-image:url('img/textura.jpg');"></td>
+		<td colspan=7 align="center"><font size=1 color="SteelBlue">Moodle/Teleduc</td>
+		<td bgcolor="LightGray" width=8% rowspan=9 style="background-image:url('img/textura.jpg');"></td>
+	</tr>
+
+
+	<tr border="0">
+		<td bgcolor="LightSteelBlue" width=3%></td>
+		<td bgcolor="white" width=1% rowspan=8></td>
+		<td colspan=3>		
+
+		<!-- CÓDIGO PARA AVISOS NO TOPO DA PAGINA -->
+				<p>
+		<div class="alert alert-warning" role="alert">
+			<img style="border: 0pt none; float:left;" src="img/iconalerta.png" width=40px height=40px>		
+		
+<p>
+
+<div align=center>
+
+<font color=#0000FF size=4><b>Sr(s) Usuário(s),</b></font>
+
+</div>
+
+<div align='justify'>
+
+<font color=#FF0000><p align=center>
+<b>Aviso Importante.</b></p></font>
+
+<font color=#0000FF>
+<p>
+A UNICAMP, via GGTE, informa que a partir do 1o semestre de 2018 o
+TelEduc, disponível no Ensino Aberto (EA), terá seu uso suspenso por
+motivos técnicos, ficando disponível somente as
+disciplinas ocorridas nos últimos cinco anos (2013 - 2017) para
+consulta. Para contribuir com esta transição, o GGTE
+disponibilizará uma ferramenta para recuperação de conteúdo do
+TelEduc-EA a partir de junho de 2017 e oferecerá treinamento aos
+docentes que queiram  migrar para os ambientes Moodle ou Google Sala
+de Aula, ambos com carga automática dos dados da DAC para a
+graduação e pós-graduação. O TelEduc, sem vínculo com o EA,
+continuará disponível aos docentes sob demanda.
+</p>
+
+<p>
+Contamos com sua compreensão.<br>
+Cordialmente,<br>
+GGTE - Grupo Gestor de Tecnologias Educacionais.
+</p>
+
+</font>
+</div>
+		</div>
+				<!-- FIM DO CÓDIGO PARA AVISOS -->
+		
+		<p align="justify"><font size=2>O Ensino Aberto é um sistema de apoio ao ensino-aprendizagem disponível para as disciplinas de graduação da Unicamp. Esse sistema automatiza o cadastro de disciplinas, alunos e docentes nos ambientes <a href="http://www.teleduc.org.br/" target="_blank">Teleduc</a> e <a href="https://moodle.org/" target="_blank">Moodle</a>. Os dois ambientes são AVAs (Ambientes Virtuais de Aprendizagem) que possuem ferramentas para disponibilizar conteúdos, e atividades de comunicação entre os participantes.</p>
+<!-- Assista a uma <a href="javascript:acessa('apresentacao');">apresentação</a> do Ensino Aberto. -->
+
+<p align="justify">Encontram-se disponíveis para download documentos em formato PDF com <a href="http://www.ggte.unicamp.br/ggte/site_ggte/arquivos/publicacoes/Orientacoes2_04_10_2007_final.pdf">orientações para o desenvolvimento de disciplinas no ambiente virtual</a> e para a <a href="http://www.ggte.unicamp.br/ggte/site_ggte/arquivos/publicacoes/preparacao.pdf">preparação de conteúdos</a>.<small>
+(Para visualizar estes documentos é necessária a instalação em seu computador do programa <a href="http://get.adobe.com/br/reader/" target="_blank">Adobe Acrobat Reader</a>.)</small></p>
+
+<!--p align="justify">(Para visualizar estes documentos é necessária a instalação em seu computador do programa <a href="http://get.adobe.com/br/reader/" target="_blank">Adobe Acrobat Reader</a>.)</p -->
+		</td>
+		<td bgcolor="white" width=1% rowspan=8></td>
+		<td bgcolor="LightSteelBlue" width=2%></td>
+	</tr>
+
+	<tr>
+		<td bgcolor="LightSteelBlue" width=3%></td>
+		<!-- td colspan=3><hr></td -->
+		<td colspan=3></td>
+		<td bgcolor="LightSteelBlue" width=3%></td>
+	</tr>
+
+
+	<tr border="0">
+		<td bgcolor="LightSteelBlue" width=3%></td>
+		<td colspan=3>
+<!------------------------------------------------------->
+
+
+	<form action="verifica_captcha.php" role="form" method="post" name="login" onSubmit="return validateCompleteForm(this, 'error')" enctype="application/x-www-form-urlencoded">
+	
+        <input name="env_report" class="form-control" value="REMOTE_HOST,REMOTE_ADDR,HTTP_USER_AGENT" type="hidden">
+        <input name="required" value="user,pass" type="hidden">
+
+<table border="0" width=100% align="center">
+	<tr bgcolor="SteelBlue" border="0">
+		<td bgcolor="LightGray" width=8% style="background-image:url('../img/textura.jpg');"></td>
+		<td align="center" colspan="2"><font size=3 color="white"><b>Autenticação</b></td>
+		<td bgcolor="LightGray" width=8% style="background-image:url('../img/textura.jpg');"></td>
+	</tr>
+
+	<tr><td></td><td colspan="2"><hr></td><td></td></tr> <!-- LINHA DIVISÓRIA -->
+
+	<tr border="0" height="35px">
+		<td></td>
+		<td align="center" colspan="2">
+		<div class="input-group" style="width:200px">
+		  <span class="input-group-addon input-sm"><b>Username</b></span>
+		  <small>nº do ra para alunos</small>
+		  <input type="text" name="user" size="20" value="" realname='Username' required='1' minlength='2' maxlength='10' class="form-control input-sm">
+		</div></td>
+		<td></td>
+	</tr>
+
+	<tr border="0" height="35px">
+		<td></td>
+		<td align="center" colspan="2">
+		<div class="input-group" style="width:200px">
+		  <span class="input-group-addon input-sm"><b>Senha</b></span>
+		  <input type="password" name="pass" size="20" value="" realname='Senha' required='1' minlength='2' maxlength='128' class="form-control input-sm">
+		</div></td>
+		<td></td>
+	</tr>
+
+        <!-- VALIDAÇÃO CAPCHA -->
+	<tr border="0">
+		<td width=3%></td>
+		<td width=33% align="center">
+			<!--img src="img/iconalunos.png" width=140px height=120px title="Acesso ao Ambiente Teleduc para Docentes e Alunos"><br -->
+			<input type="checkbox" name="ped" value="P"> <small>Acessar como PED ou <br>como Aluno Especial</small><br>
+			<button name="btnTeleduc" type="submit" class="btn btn-default"><img src="img/iconalunos.png" width=140px height=120px title="Acesso ao Ambiente Teleduc para Docentes e Alunos"><br><b>Entrar no Teleduc</b></button>
+		</td>
+		<td width=33% align="center">
+			<br>
+			<button name="btnMoodle" type="submit" class="btn btn-default"><img src="img/iconmoodle.jpeg" width=120px height=120px title="Acesso ao Ambiente Moodle para Docentes e Alunos"><br><b>Entrar no Moodle</b></button>
+		</td>
+		<td width=3%></td>
+	</tr>
+
+</table>
+
+</form>		
+
+
+<!------------------------------------------------------->
+		</td>
+		<td bgcolor="LightSteelBlue" width=3%></td>
+	</tr>
+
+	<tr>
+		<td bgcolor="LightSteelBlue" width=3%></td>
+		<td colspan=3><hr></td>
+		<td bgcolor="LightSteelBlue" width=3%></td>
+	</tr>
+
+
+	<tr border="0">
+		<td bgcolor="LightSteelBlue"></td>
+		<td width=22% align="center"><a href="discgrad.php"><img src="img/icondisciplinas.png" width=120px height=120px title="Lista com informações de todas as Disciplinas oferecidas na graduação e tecnologia que poderão fazer uso do Ensino Aberto"><br><button type="button" class="btn btn-danger btn-sm">Lista de Disciplinas</button></a></td>
+		<td width=22% align="center"><a href="#" onclick="OpenFAQ('faq/faq.html');"><img src="img/iconfaq.png" width=120px height=120px title="Dúvidas frequentes sobre o Ensino Aberto"><br><button type="button" class="btn btn-danger btn-sm">Dúvidas frequentes</button></a></td>
+		<td width=22% align="center"><a href="#" onclick="OpenFormContato('rt/index.php');"><img src="img/iconform.png" width=120px height=120px title="Entre em contato conosco"><br><button type="button" class="btn btn-danger btn-sm">Formulário de Contato</button></a></td>
+		<td bgcolor="LightSteelBlue" width=3%></td>
+	</tr>
+
+	<tr>
+		<td bgcolor="LightSteelBlue" width=3%></td>
+		<td colspan=3><hr></td>
+		<td bgcolor="LightSteelBlue" width=3%></td>
+	</tr>
+
+	<tr border="0">
+		<td bgcolor="LightSteelBlue" width=3%></td>
+		<td colspan=3>
+<p align="justify"><font size=2>Para alterar sua senha acesse <a href="#"  onclick="OpenFormContato('https://www1.sistemas.unicamp.br/TrocarSenha/trocarsenha.do')">alterar senha LDAP</a> de docentes e alunos com vínculo formal (matrícula ou RA).</p>
+
+<p align="justify"><font size=2>Para recuperar sua senha de Colaborador Externo do <b>Teleduc</b>, acesse <a href="#"  onclick="OpenFormContato('http://webensino.unicamp.br/cursos/aplic/esqueci_senha_dac.php')">esqueci minha senha de colaborador externo</a>.</p>
+
+<p align="justify"><font size=2>Para criar usuário externo no <b>Moodle</b>, acesse o <a href="https://www.ggte.unicamp.br/eam/login/signup.php">formulário de cadastro de colaboradores sem vínculo com a Unicamp</a>. ATENÇÃO: professores, alunos regulares e alunos especiais da Unicamp já estão automaticamente cadastrados com o mesmo login e a senha da DAC.</p>
+
+<p align="justify">Para se informar sobre as disciplinas e turmas que estão ativamente usando o ambiente <b>Teleduc</b> do Ensino Aberto no presente semestre, consulte a <a href="ldisc.php">relação das disciplinas ativas por unidade de ensino</a>.</p>
+
+<p align="justify">Para se informar sobre as disciplinas e turmas que estão ativamente usando o ambiente <b>Moodle</b> do Ensino Aberto no presente semestre, consulte a <a href="http://www.ggte.unicamp.br/eam/">pagina inicial do ambiente Moodle</a>.</p>
+
+<p align="justify">Para obter informações sobre o sistema Ensino Aberto, entre em contato com nosso serviço de atendimento ao usuário pelos ramais 12264 ou 12283 (telefones 3521-2264 e 3521-2283) ou preencha o nosso <a href="#" onclick="OpenFormContato('rt/index.php');">formulário de contato</a>.</p>
+		</td>
+
+		<td bgcolor="LightSteelBlue" width=3%></td>
+	</tr>
+
+	<tr bgcolor="SteelBlue" border="0">
+		<td colspan=7 align="right"><font size=1 color="white"><b>GGTE - Grupo Gestor de Tecnologias Educacionais</b></font></td>
+	</tr>
+
+</table>
+
+<br><br>
+
+  </body>
+</html>
+
+
+
+Process finished with exit code 0

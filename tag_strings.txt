@@ -1,0 +1,23 @@
+        get_ativas_link = re.findall(
+                            r"(?=custom_menu_language\" class=\"custom_menu\">)(.*?)(?<=/span></span></a></li><li>)",
+                            get_ativas_html[0])
+        deltags = (get_ativas_html[0].replace(get_ativas_link[0], ""))
+        get_final_link = re.findall(r"(?=http)(.*?)(?=</span></a>)", deltags)
+        for i in get_final_link:
+            tag1 = '"><span><span aria-hidden="true" class="fa fa-graduation-cap"></span>'
+            if tag1 in i:
+                replace = i.replace(tag1, ", ")
+                link_dis = replace.split(",")
+                self.dis_name.append(link_dis[1])
+                self.distopic.update({link_dis[1]: link_dis[0]})
+        for name in self.dis_name:
+            disdocs = []
+            dispage = self.log.get(self.distopic[name])
+            dispage_docs = re.findall(r"(?=/mod/resource/view\.php\?)(.*?)(?=\")", dispage.text)
+            disdocs_names = re.findall(r"(?=<span class=\"instancename\">)(.*?)(?=<span class=\"accesshide)", dispage.text)
+            avisos = '<span class="instancename">Avisos'
+            html_spantag = '<span class="instancename">'
+            for doc in disdocs_names:
+                if doc == avisos:
+                 disdocs_names.remove(doc)
+            print(disdocs_names)

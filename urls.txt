@@ -1,0 +1,7 @@
+https://www.ggte.unicamp.br/ea/index_ldap.php
+http://webensino.unicamp.br/pagina_inicial/index.php
+http://webensino.unicamp.br/cursos/aplic/material/
+http://webensino.unicamp.br/cursos/aplic/material/ver.php?
+###########################################################
+---------------------Moodle---------------------------------
+https://www.ggte.unicamp.br/eam/login/index.php

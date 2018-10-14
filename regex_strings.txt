@@ -1,0 +1,14 @@
+&cod_curso=[0-9]*
+r"(?=cod_curso)(.*)(?=\"><img)"
+r"/\w*/\w*///.+?(?<=.pdf)" /\w*/\w*///.+?(?=\s)
+r"(?<='280')(.*)(?=</font)"
+r"(?=[A-Z]{2})(.*)(?=</nobr)"
+r"(?<=\/\/\/)(.*)"
+r"(?<=\/\/\/)(.*?)(?<=pdf)"
+(?=material.php)(.*)(?=\"><img)
+################################################
+-------------------Moodle-----------------------
+<h2 id="instance-88870-header">Arquivos privados</h2>
+(?=custom_menu_language)(.*?)(?=custom_menu_themecolours)
+r"(?=custom_menu_language\" class=\"custom_menu\">)(.*?)(?<=/span></span></a></li><li>)"
+(?=http://www\.ggte\.unicamp\.br/eam/mod/resource/view\.php\?id=)(.*?)(?<=id=[0-9]{6})

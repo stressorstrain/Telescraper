@@ -1,0 +1,985 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title>:: Ensino Aberto ::</title>
+        <link rel="stylesheet" type="text/css" href="include/sdmenu.css" />
+        <script type="text/javascript" src="include/sdmenu.js">
+            /***********************************************
+             * Slashdot Menu script- By DimX
+             * Submitted to Dynamic Drive DHTML code library: http://www.dynamicdrive.com
+             * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+             ***********************************************/
+        </script>
+        <script language="JavaScript">
+            var myMenu;
+            window.onload = function() {
+                myMenu = new SDMenu("my_menu");
+                myMenu.init();
+            };
+        
+
+            function acessa(formA,formB,formC){
+                document.form1.enviaA.value=formA;
+                document.form1.enviaB.value=formB;
+                document.form1.enviaC.value=formC;
+                /** document.form1.PHPSESSID.value=PHPSESSID; **/
+                document.form1.submit();
+            }
+
+            function open_win (file) {
+                param = "'toolbar=0,scrollbars=1,location=0,statusbar=1,menubar=0,resizable=0,width=600,height=600'";
+                images_window = window.open(file, "images", param);
+                if (!images_window.opener) images_window.opener = self;
+            }
+
+ 	    function export_curso(sid) {  /* inserido por Roberto para a função de exportação */
+               urlCurso = "../cursos/aplic/publicar/exportar.php?" + sid;
+               window.open(urlCurso,"_top");
+            }
+
+            function open_curso(sid) {
+                urlCurso = "../cursos/aplic/index.php?" + sid;
+                window.open(urlCurso,"_top");
+            }
+
+/*            function open_curso_hist(hosthist, sid) {
+                urlCurso = "../login.php?"+sid;
+                window.open(urlCurso,"_top");
+            }
+*/
+            function open_curso_hist(hist, sid) {
+                urlCurso = "../login"+hist+".php?"+sid;
+                window.open(urlCurso,"_top");
+            }
+
+/*            function open_curso_hist(hosthist, sid) {
+                urlCurso = "http://"+hosthist+":8080/index_hist.php?"+sid;
+                window.open(urlCurso,"_top");
+            }*/
+
+            /**
+             * Displays an confirmation box beforme to submit a "DROP/DELETE/ALTER" query.
+             * This function is called while clicking links
+             *
+             * @param   object   the link
+             * @param   object   the confirmation message
+             *
+             * @return  boolean  whether to run the query or not
+             *
+             * js form validation stuff */
+            var confirmMsg  = 'Você optou por sair do Ensino Aberto';
+
+            function confirmLink(theLink, theMsgConfirm)
+            {
+                var is_confirmed = confirm(confirmMsg + ' :\n' + theMsgConfirm);
+                if (is_confirmed) {
+                    /* theLink.href += '&is_js_confirmed=1'; */
+                    /* parent.close(); */
+                }
+
+                return is_confirmed;
+            } // end of the 'confirmLink()' function
+
+            function AbrirURL(theURL) {
+                var largura = screen.availWidth;
+                var altura = screen.availHeight;
+
+                window.open(theURL,"AbreJenela1","top=0, left=0, width=750, height=550, scrollbars=yes,toolbar=yes,location=yes,menubar=yes,resizable=yes");
+            }
+
+            function AbrirJanela(theURL) {
+                window.open(theURL,"AbreJenela2","top=0, left=0, width=800, height=600, scrollbars=yes,toolbar=no,location=no,menubar=no,resizable=yes");
+            }
+        </script>
+    </head>
+    <body bgcolor="#FFFFFF" topmargin="0" leftmargin="0" marginwidth="0" marginheight="10" >
+    <form name="form1" action="index.php" method="POST" onSubmit="return validateForm(this);" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="enviaA" value="">
+        <input type="hidden" name="enviaB" value="">
+        <input type="hidden" name="enviaC" value="">
+        <!-- <input type="hidden" name="PHPSESSID" value=""> -->
+        <center>
+            <table border=0 CELLSPACING=0 CELLPADDING=0>
+                <tr><td width=760 height=51 CELLSPACING=0 CELLPADDING=0>
+                        <img src="images/topo.jpg" height=51 width=760 usemap="#Map" border="0"><map name="Map">
+                            <area shape="rect" coords="12,4,212,47" href="javascript:acessa('index','','')">
+                            <area shape="rect" coords="705,5,744,46" href="#" onClick="AbrirURL('http://www.unicamp.br');">
+                        </map>
+                    </td></tr>
+                <tr><td width=760 height=18 CELLSPACING=0 CELLPADDING=0>
+
+                        
+                            <img src="images/barra_menu.jpg" height=18 width=760 usemap="#Map2" border="0"><map name="Map2">
+                                <area shape="rect" coords="246,3,322,15" href="javascript:acessa('index','','');">
+                                <area shape="rect" coords="362,3,424,15" href="javascript:acessa('disciplinas','','');">
+                                <area shape="rect" coords="464,4,533,13" href="#" onClick="AbrirURL('http://www.unicamp.br/prg/dac');">
+                                <!--<area shape="rect" coords="572,4,616,14" href="javascript:acessa('contato','','');">-->
+                                <area shape="rect" coords="572,4,616,14" href="#" onclick="window.open('http://www.unicamp.br/EA/rt/','contato', 'top=0,left=0,width=750,height=550,scrollbars=yes,toolbar=no,location=no,menubar=no,resizable=yes');" >
+                                <area shape="rect" coords="655,3,680,14" href="javascript:acessa('faq','','');">
+                                <area shape="rect" coords="710,3,750,14" href="sair.php" onClick="return confirmLink(this,'Deseja realmente sair?')">
+                            </map>
+
+                        
+                    </td></tr>
+            </table>
+<TABLE cellSpacing=0 width=760 border=0>
+    <TBODY>
+        <TR>
+            <TD vAlign=top width=155 background="images/fundo_barra.jpg">
+                <IMG height=300 src="images/barra_disc.jpg" width=155 border="0">
+            </TD>
+            <TD vAlign=top width=605>
+                <div align="left">
+
+                    
+                        <table width="600" border="0" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <font face="Arial, Helvetica, sans-serif" size="2"><BR>
+                                    O acesso a cada disciplina s&oacute; ser&aacute; liberado aos alunos quando o professor respons&aacute;vel
+                                    entrar na disciplina e clicar em "disponibilizar disciplina" no menu administra&ccedil;&atilde;o.
+                                    <BR><BR></font>
+                                </td>
+                            </tr>
+
+                                                            <tr>
+                                    <td>
+                                        <font face="Arial, Helvetica, sans-serif" size="2">
+                                        ATEN&Ccedil;&Atilde;O! As disciplinas em que voc&ecirc; <b>MONITOR</b> est&atilde;o marcadas com <b>X</b> na
+                                        coluna <b>Monitoria</b>.
+                                        <BR><BR></font>
+                                    </td>
+                                </tr>
+                            
+                        </table>
+
+                                                            <div id="my_menu" class="sdmenu" style="margin-top: 2em;">
+                        
+                                                        
+        
+                                        <table width="600" border="0" cellspacing="0">
+                                        </table>
+                                                <div>
+                                        <!-- Carrega cursos para alunos -->
+                                        <span>2º Período de 2017</span>
+
+                                        <table width="600" border="0" cellspacing="2">
+                                            <tr>
+                                                <td width="280" valign="top" align="left" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2"><b><font color="#666666">Nome
+                                                        da Disciplina</font></b></font>
+                                                </td>
+                                                <td width="100" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>C&oacute;digo</b></font>
+                                                </td>
+                                                <td width="65" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Turma</b></font>
+                                                </td>
+                                                <td width="75" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Monitoria</b></font>
+                                                </td>
+                                                <td width="80" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Acesso</b></font>
+                                                </td>
+                                            </tr>
+                                                        <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Anatomia Humana Geral </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BA480</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'><a href="javascript:open_curso('&cod_curso=148924')">Entrar</a></font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Fundamentos Éticos para Exercício P. Biólogo </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BD520</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Tópicos Especiais em Biologia II </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BD690</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Ecologia de Comunidades e Ecossistemas </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BE681</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Ensino Biologia III : Ecologia - A. Terrestre </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BE694</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Genética e Evolução </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BG680</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'><a href="javascript:open_curso('&cod_curso=149111')">Entrar</a></font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Embriologia Comparada </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BH620</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Zooparasitologia </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BP820</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+</table>
+                                    </div>
+                                
+                            
+
+                                                        
+        
+                                        <table width="600" border="0" cellspacing="0">
+                                        </table>
+                                                <div>
+                                        <!-- Carrega cursos para alunos -->
+                                        <span>1º Período de 2017</span>
+
+                                        <table width="600" border="0" cellspacing="2">
+                                            <tr>
+                                                <td width="280" valign="top" align="left" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2"><b><font color="#666666">Nome
+                                                        da Disciplina</font></b></font>
+                                                </td>
+                                                <td width="100" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>C&oacute;digo</b></font>
+                                                </td>
+                                                <td width="65" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Turma</b></font>
+                                                </td>
+                                                <td width="75" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Monitoria</b></font>
+                                                </td>
+                                                <td width="80" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Acesso</b></font>
+                                                </td>
+                                            </tr>
+                                                        <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Tópicos Especiais em Áreas Ciências B. I </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BD491</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'><a href="javascript:open_curso('&cod_curso=142586')">Entrar</a></font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Iniciação Científica II </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BD600</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Ecologia de Organismos e Populações </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BE581</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Microbiologia </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BM720</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'><a href="javascript:open_curso('&cod_curso=142770')">Entrar</a></font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Ensino de Biologia X: Fisiologia Vegetal </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BV694</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>B </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Zoologia de Invertebrados II </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BZ382</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Zoologia de Invertebrados no Campo II </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BZ383</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Elementos de Geologia </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>GM280</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+</table>
+                                    </div>
+                                
+                            
+
+                                                        
+        
+                                        <table width="600" border="0" cellspacing="0">
+                                        </table>
+                                                <div>
+                                        <!-- Carrega cursos para alunos -->
+                                        <span>2º Período de 2016</span>
+
+                                        <table width="600" border="0" cellspacing="2">
+                                            <tr>
+                                                <td width="280" valign="top" align="left" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2"><b><font color="#666666">Nome
+                                                        da Disciplina</font></b></font>
+                                                </td>
+                                                <td width="100" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>C&oacute;digo</b></font>
+                                                </td>
+                                                <td width="65" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Turma</b></font>
+                                                </td>
+                                                <td width="75" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Monitoria</b></font>
+                                                </td>
+                                                <td width="80" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Acesso</b></font>
+                                                </td>
+                                            </tr>
+                                                        <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Sistemática de Angiospermas I </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BT483</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Zoologia de Vertebrados </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BZ681</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Psicologia e Educação </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>EL511</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>E </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'><a href="javascript:open_curso('&cod_curso=137579')">Entrar</a></font>
+              </td>
+            </tr>
+</table>
+                                    </div>
+                                
+                            
+
+                                                        
+        
+                                        <table width="600" border="0" cellspacing="0">
+                                        </table>
+                                                <div>
+                                        <!-- Carrega cursos para alunos -->
+                                        <span>1º Período de 2016</span>
+
+                                        <table width="600" border="0" cellspacing="2">
+                                            <tr>
+                                                <td width="280" valign="top" align="left" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2"><b><font color="#666666">Nome
+                                                        da Disciplina</font></b></font>
+                                                </td>
+                                                <td width="100" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>C&oacute;digo</b></font>
+                                                </td>
+                                                <td width="65" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Turma</b></font>
+                                                </td>
+                                                <td width="75" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Monitoria</b></font>
+                                                </td>
+                                                <td width="80" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Acesso</b></font>
+                                                </td>
+                                            </tr>
+                                                        <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Ecologia de Organismos e Populações </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BE581</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Biofísica e Fisiologia Humana II </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BF583</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'><a href="javascript:open_curso('&cod_curso=130186')">Entrar</a></font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Genética Fisiológica e Molecular </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BG520</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Imunologia Básica </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BI520</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'><a href="javascript:open_curso('&cod_curso=130273')">Entrar</a></font>
+              </td>
+            </tr>
+</table>
+                                    </div>
+                                
+                            
+
+                                                        
+        
+                                        <table width="600" border="0" cellspacing="0">
+                                        </table>
+                                                <div>
+                                        <!-- Carrega cursos para alunos -->
+                                        <span>2º Período de 2015</span>
+
+                                        <table width="600" border="0" cellspacing="2">
+                                            <tr>
+                                                <td width="280" valign="top" align="left" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2"><b><font color="#666666">Nome
+                                                        da Disciplina</font></b></font>
+                                                </td>
+                                                <td width="100" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>C&oacute;digo</b></font>
+                                                </td>
+                                                <td width="65" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Turma</b></font>
+                                                </td>
+                                                <td width="75" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Monitoria</b></font>
+                                                </td>
+                                                <td width="80" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Acesso</b></font>
+                                                </td>
+                                            </tr>
+                                                        <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Tóp.Espec. Áreas das Ciências Biológicas VIII </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BD583</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'><a href="javascript:open_curso('&cod_curso=124057')">Entrar</a></font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Biofísica e Fisiologia Humana I </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BF483</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'><a href="javascript:open_curso('&cod_curso=124112')">Entrar</a></font>
+              </td>
+            </tr>
+</table>
+                                    </div>
+                                
+                            
+
+                                                        
+        
+                                        <table width="600" border="0" cellspacing="0">
+                                        </table>
+                                                <div>
+                                        <!-- Carrega cursos para alunos -->
+                                        <span>1º Período de 2015</span>
+
+                                        <table width="600" border="0" cellspacing="2">
+                                            <tr>
+                                                <td width="280" valign="top" align="left" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2"><b><font color="#666666">Nome
+                                                        da Disciplina</font></b></font>
+                                                </td>
+                                                <td width="100" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>C&oacute;digo</b></font>
+                                                </td>
+                                                <td width="65" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Turma</b></font>
+                                                </td>
+                                                <td width="75" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Monitoria</b></font>
+                                                </td>
+                                                <td width="80" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Acesso</b></font>
+                                                </td>
+                                            </tr>
+                                                        <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Metabolismo </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BB381</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>B </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'><a href="javascript:open_curso('&cod_curso=117974')">Entrar</a></font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Tópicos Especiais em Educação II </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>EL210</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'><a href="javascript:open_curso('&cod_curso=119179')">Entrar</a></font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Matemática Aplicada para Biologia </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>MS380</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>B </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'><a href="javascript:open_curso('&cod_curso=121941')">Entrar</a></font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Química I (Biologia) </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>QG107</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A+B </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+</table>
+                                    </div>
+                                
+                            
+
+                                                        
+        
+                                        <table width="600" border="0" cellspacing="0">
+                                        </table>
+                                                <div>
+                                        <!-- Carrega cursos para alunos -->
+                                        <span>2º Período de 2014</span>
+
+                                        <table width="600" border="0" cellspacing="2">
+                                            <tr>
+                                                <td width="280" valign="top" align="left" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2"><b><font color="#666666">Nome
+                                                        da Disciplina</font></b></font>
+                                                </td>
+                                                <td width="100" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>C&oacute;digo</b></font>
+                                                </td>
+                                                <td width="65" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Turma</b></font>
+                                                </td>
+                                                <td width="75" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Monitoria</b></font>
+                                                </td>
+                                                <td width="80" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Acesso</b></font>
+                                                </td>
+                                            </tr>
+                                                        <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Biologia Celular II </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BC283</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Sistemática de Criptógamas e Gimnospermas </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BT282</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'><a href="javascript:open_curso('&cod_curso=112640')">Entrar</a></font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Botânica no Campo I </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BT283</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Escola e Cultura </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>EL683</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>H </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'><a href="javascript:open_curso('&cod_curso=113519')">Entrar</a></font>
+              </td>
+            </tr>
+</table>
+                                    </div>
+                                
+                            
+
+                                                        
+        
+                                        <table width="600" border="0" cellspacing="0">
+                                        </table>
+                                                <div>
+                                        <!-- Carrega cursos para alunos -->
+                                        <span>1º Período de 2014</span>
+
+                                        <table width="600" border="0" cellspacing="2">
+                                            <tr>
+                                                <td width="280" valign="top" align="left" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2"><b><font color="#666666">Nome
+                                                        da Disciplina</font></b></font>
+                                                </td>
+                                                <td width="100" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>C&oacute;digo</b></font>
+                                                </td>
+                                                <td width="65" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Turma</b></font>
+                                                </td>
+                                                <td width="75" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Monitoria</b></font>
+                                                </td>
+                                                <td width="80" valign="top" bgcolor="#f0f0f0">
+                                                    <font face="Arial, Helvetica, sans-serif" size="2" color="#666666"><b>Acesso</b></font>
+                                                </td>
+                                            </tr>
+                                                        <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Biologia Celular I </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BC183</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A+B </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'><a href="javascript:open_curso('&cod_curso=106948')">Entrar</a></font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Introdução à Evolução </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>BG181</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>A </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'><a href="javascript:open_curso('&cod_curso=107023')">Entrar</a></font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Pol. Educ.: Organiz.da Educ. Brasileira </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>EL212</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>C </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'><a href="javascript:open_curso('&cod_curso=107884')">Entrar</a></font>
+              </td>
+            </tr>
+            <tr>
+              <td width='280' valign='top' align='left' bgcolor='#f0f0f0'><font face='Arial, Helvetica, sans-serif' size='2'>Química I (Biologia) </font></td>
+              <td width='100' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>QG107</font>
+              </td>
+              <td width='65' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>C+D </font>
+              </td>
+              <td width='75' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'></font>
+              </td>
+              <td width='80' valign='top' bgcolor='#f0f0f0'>
+                <font face='Arial, Helvetica, sans-serif' size='2'>Nao Ativa</font>
+              </td>
+            </tr>
+</table>
+                                    </div>
+                                
+                            
+                    </div>
+                    <br>
+
+                    <br>
+
+
+            </TD>
+        </TR>
+    </TBODY>
+</TABLE>
+  <img SRC="images/rodape.jpg" height=20 width=760 usemap="#Map5" border="0"><map name="Map5">
+  <area shape="rect" coords="16,6,59,16" href="javascript:acessa('sobre_teleduc','','');">
+  </map>
+  </form>
+  </center>
+</body>
+</html>
